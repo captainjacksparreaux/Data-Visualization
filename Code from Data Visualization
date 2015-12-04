@@ -1,0 +1,52 @@
+## Code for graphs of Gender v Industry
+BC.bar <- ggplot(data=BC,aes( x=Industry, fill=Entrepreneur_Gender)) + 
+  geom_bar()+ 
+  theme(axis.text.x = element_text(angle=90, hjust=1))+
+  scale_y_continuous("",limits=c(0,20))+
+  xlab("")+
+  theme(legend.position="none")
+MC.bar <- ggplot(data=MC,aes( x=Industry, fill=Entrepreneur_Gender)) + 
+  geom_bar()+ 
+  theme(axis.text.x = element_text(angle=90, hjust=1))+
+  scale_y_continuous("",limits=c(0,20))+
+  xlab("")+
+  theme(legend.position="none")
+LG.bar <- ggplot(data=LG,aes( x=Industry, fill=Entrepreneur_Gender)) + 
+  geom_bar()+ 
+  theme(axis.text.x = element_text(angle=90, hjust=1))+
+  scale_y_continuous("",limits=c(0,20))+
+  xlab("")+
+  theme(legend.position="none")
+RH.bar <- ggplot(data=RH,aes( x=Industry, fill=Entrepreneur_Gender)) + 
+  geom_bar()+
+  theme(axis.text.x =element_text(angle=90,hjust=1))+
+  scale_y_continuous("",limits=c(0,20))+
+  xlab("")+
+  theme(legend.position="none")
+DJ.bar <- ggplot(data=DJ,aes( x=Industry, fill=Entrepreneur_Gender)) + 
+  geom_bar()+ 
+  theme(axis.text.x = element_text(angle=90, hjust=1))+
+  scale_y_continuous("",limits=c(0,20))+
+  xlab("")+
+  theme(legend.position="none")
+KO.bar <- ggplot(data=KO,aes( x=Industry, fill=Entrepreneur_Gender)) + 
+  geom_bar()+ 
+  theme(axis.text.x =  element_text(angle=90,hjust=1))+
+  scale_y_continuous("",limits=c(0,20))+
+  xlab("")+
+  theme(legend.position="none")
+grid.arrange(BC.bar, MC.bar, LG.bar, RH.bar, DJ.bar, KO.bar,
+             ncol = 3)
+             
+## Industry graphs, by gender, and by whether they were offered a deal or not
+Deal.Ind <- ggplot(data=ST.small,
+  aes( x=Industry, fill = Deal))+ 
+  geom_bar()+
+  theme(axis.text.x =  element_text(angle=90,hjust=1))+
+  ylab("")
+Gender.Ind <- ggplot(data=ST.small,
+                   aes( x=Industry, fill = Entrepreneur_Gender))+ 
+  geom_bar()+
+  theme(axis.text.x =  element_text(angle=90,hjust=1))+
+  ylab("")
+grid.arrange(Deal.Ind, Gender.Ind, ncol = 2)
